@@ -1,8 +1,13 @@
+import java.util.Random;
+import java.util.Scanner;
+
 public class Main {
 
-
-
     public static void main(String[] args) {
+        //  Random rand = new Random(); // uus instants
+        //  Math.random(); // static
+
+
         /*System.out.println("Hello world!");
         String sonaline = "Sõnaline muutuja";
         char yhetaheline = 's';
@@ -12,35 +17,31 @@ public class Main {
         byte pisikeNumber = 127;
         short lyhikeNumber = -32767;
         long pikkNumber = 123123123; // 8 bytes, rohkem kui int(4)*/
-
-        int playerXCoordinate = 3; // int on täisarvuline number
-        int playerYCoordinate = 3;
-        int dragonXCoordinate = 6;
-        int dragonYCoordinate = 2;
-        int orcXCoordinate = 5;
-        int orcYCoordinate = 1;
-
         // sout; fori
-        // algväärtus kuni iga tsükkel
-        for (int y = 0; y < 5; y++) {
+
+        Scanner scanner = new Scanner(System.in);
+
+
+        World world = new World(10, 5);
+
+        Player player = new Player(world.width, world.height);
+        Dragon dragon = new Dragon(world.width, world.height);
+        Orc orc = new Orc(world.width, world.height);
+
+        world.printMap(world.width, world.height,
+                player.xCoordinate, player.yCoordinate, player.symbol,
+                dragon.xCoordinate, dragon.yCoordinate, dragon.symbol,
+                orc.xCoordinate, orc.yCoordinate, orc.symbol);
+        String input = scanner.nextLine();
+//        for (; playerYCoordinate < 2; y++) {
+        while (!input.equals("end")) {
+            player.move(input, world);
+            world.printMap(world.width, world.height,
+                    player.xCoordinate, player.yCoordinate, player.symbol,
+                    dragon.xCoordinate, dragon.yCoordinate, dragon.symbol,
+                    orc.xCoordinate, orc.yCoordinate, orc.symbol);
             System.out.println();
-            for (int x = 0; x < 10; x++) {
-                if (y == 0 || y == 4) { //kui esimene sobib, siis teise "või" juurde ei lähe
-                    System.out.print("-");
-                } else if (x == 0 || x == 9) {
-                    System.out.print("|");
-                } else {
-                    if (playerXCoordinate == x && playerYCoordinate == y) {
-                        System.out.print("X");
-                    } else if (dragonXCoordinate == x && dragonYCoordinate == y) {
-                        System.out.print("D");
-                    } else if (orcXCoordinate == x && orcYCoordinate == y) {
-                        System.out.print("O");
-                    } else {
-                        System.out.print(" ");
-                    }
-                }
-            }
+            input = scanner.nextLine();
         }
     }
 }
