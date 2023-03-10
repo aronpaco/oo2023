@@ -1,6 +1,5 @@
 public class Main {
-    public Main() {
-    }
+
         public static void main(String[] args) {
 // äge tabel
             int numberOfRows = 5;

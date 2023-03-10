@@ -3,6 +3,8 @@ public class Player {
     int yCoordinate; // castimine ehk teisendamine ühest tüübist teise (double to int)
     char symbol;
     Direction direction; // 3nda tunni teema
+    // Ese: xCoordinate, yCoordinate, tugevusest, kasutuskordadest, nimest
+    Item item; // klassikomplekt    Player klassi sees on Item klass
 
     public Player(int worldWidth, int worldHeight) {
         this.xCoordinate = getRandomCoordinate(worldWidth);
