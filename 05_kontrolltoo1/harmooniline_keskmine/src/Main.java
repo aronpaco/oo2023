@@ -5,8 +5,12 @@ import static java.lang.Long.sum;
 public class Main {
     public static void main(String[] args) {
         findAverage(10, 15);
-
-        double averageSpeedList = getAverageSpeedList();
+        ArrayList<Double> speeds = new ArrayList<Double>();
+        speeds.add(149.0);
+        speeds.add(142.0);
+        speeds.add(140.0);
+        speeds.add(150.0);
+        double averageSpeedList = getAverageSpeedList(speeds);
         System.out.println(averageSpeedList);
     }
 
@@ -14,12 +18,7 @@ public class Main {
         double findAverage = (speed1 + speed2) / 2;
         System.out.println(findAverage);
     }
-    private static double getAverageSpeedList() {
-        ArrayList<Double> speeds = new ArrayList<Double>();
-        speeds.add(149.0);
-        speeds.add(142.0);
-        speeds.add(140.0);
-        speeds.add(150.0);
+    private static double getAverageSpeedList(ArrayList<Double> speeds) {
         double averageSpeedList = 0;
         double total = 0;
         for (int i = 0; i < speeds.size(); i++) {
@@ -29,17 +28,3 @@ public class Main {
         return averageSpeedList;
     }
 }
-       /* ArrayList<Double> speeds = new ArrayList<Double>();
-        speeds.add(149.0);
-        speeds.add(142.0);
-        speeds.add(140.0);
-        speeds.add(150.0);
-        System.out.println("Kiirused: " + speeds);
-        System.out.println("Kilomeetrid: " + speeds.size());
-        double total = 0;
-        double averageSpeedList = 0;
-        for (int i = 0; i < speeds.size(); i++) {
-            total += speeds.get(i);
-            averageSpeedList = total / speeds.size();
-        }
-        System.out.println("Keskmine kiirus listist on " + averageSpeedList); */
