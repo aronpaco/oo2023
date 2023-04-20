@@ -7,7 +7,7 @@ public class AutomaatTest {
     @Test
     public void kontrolli_kas_on_naisterahvas_kui_isikukoodi_alguses_on_4() {
         IsikukoodEE ee = new IsikukoodEE("Martiine", "40404049996");
-        assertEquals("F", ee.getSugu());
+        assertEquals("N", ee.getSugu());
     }
     @Test
     public void kontrolli_kas_on_naisterahvas_kui_isikukoodi_alguses_on_7() {

@@ -18,8 +18,9 @@ public class Apartment extends RealEstate implements Calculations {
         }
 
         double yearMultiplier = 1;
-        for (int i = 1990; i <= yearBuilt; i++) {
+        for (int i = 1991; i <= yearBuilt; i++) {
             yearMultiplier += 0.025;
+            round(yearMultiplier);
         }
         pricePerSquareMeter *= yearMultiplier;
 

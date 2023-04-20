@@ -1,4 +1,4 @@
 public interface Calculations {
-    double getPrice();
     double getPricePerSquareMeter();
+    double getPrice();
 }
