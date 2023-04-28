@@ -15,6 +15,12 @@ public class Main {
         double[] sisend = {3,4,5,6,6}; // [3,4,5,6,6]
         // List<Double> sisend = new ArrayList(Arrays.asList(3,4,5,6,6));
         System.out.println(Arrays.toString(libisevKeskmine(sisend)));
+
+        LibisevKeskmine libisev = new LibisevKeskmine(2,3,4);
+        libisev.lisaArv(4);
+        System.out.println(libisev.arvudKeskmisega);
+        libisev.lisaArv(5);
+        System.out.println(libisev.arvudKeskmisega);
     }
     private static double aritmeetilineKeskmine2(double n1, double n2, double n3) {
         return (n1 + n2 + n3) / 3;
