@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class KuulutusController {
+public class ListingController {
     Kuulutus kuulutus = new Kuulutus(1, "Koola", 1.5, true);
     Kuulutus kuulutus2 = new Kuulutus(1, "Fanta", 2, true);
 
