@@ -9,6 +9,16 @@ import java.util.List;
 
 @RestController
 public class VehicleListController {
+    /*
+        public VehicleListController() {
+            this.vehicles = new ArrayList<>();
+            this.vehicles.add(new Vehicle(1,"Mercedes-Benz", "C 180 T", 1500));
+            this.vehicles.add(new Vehicle(2, "Audi", "A3", 9000));
+            this.vehicles.add(new Vehicle(3, "BMW", "X5", 15000));
+            this.vehicles.add(new Vehicle(4, "Volkswagen", "Golf", 5000));
+            this.vehicles.add(new Vehicle(5, "Ford", "Fiesta", 3000));
+        }
+        */
     List<Vehicle> vehicles = new ArrayList<>(Arrays.asList(
             new Vehicle(1,"Mercedes-Benz", "C 180 T", 1500),
             new Vehicle(2, "Audi", "A3", 9000),
@@ -16,6 +26,7 @@ public class VehicleListController {
             new Vehicle(4, "Volkswagen", "Golf", 5000),
             new Vehicle(5, "Ford", "Fiesta", 3000)
     ));
+
     @GetMapping("vehicles")
     public List<Vehicle> getVehicles() {
         return vehicles;
@@ -28,7 +39,7 @@ public class VehicleListController {
             @PathVariable int price) {
         vehicles.add(new Vehicle(id, brand, model, price));
         return vehicles;
-    } // http://localhost:8080/add-vehicle/6/Cadillac/Escalade/20000/
+    } // localhost:8080/add-vehicle/6/Cadillac/Escalade/20000
     @GetMapping("delete-vehicle/{target_id}")
     public List <Vehicle> deleteVehicle(@PathVariable int target_id) {
         vehicles.removeIf(vehicle -> vehicle.getId()==(target_id));
@@ -55,13 +66,4 @@ public class VehicleListController {
         }
         return vehicles;
     }
-    /*
-    @GetMapping("activate-all/{activity}") // activate-all/true; false
-    public List<Vehicle> activateAll(@PathVariable boolean activity) {
-        for (Vehicle vehicle : vehicles) {
-            vehicle.setActive(activity);
-        }
-        return vehicles;
-    }
-    */
 }

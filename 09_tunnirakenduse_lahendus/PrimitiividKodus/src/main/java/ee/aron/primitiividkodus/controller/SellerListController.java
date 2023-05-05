@@ -54,4 +54,5 @@ public class SellerListController {
         }
         return sellers;
     }
+
 }
