@@ -20,9 +20,15 @@ public class ListingListController {
     SellerListController sellerListController;
 
     Vehicle vehicle1 = new Vehicle(1, "BMW", "316i", 2500);
+    Vehicle vehicle2 = new Vehicle(2, "Mercedes", "A 160", 1000);
+    Vehicle vehicle3 = new Vehicle(3, "Volkswagen", "Golf", 2500);
     Seller seller1 = new Seller(1, "Guido", "5123123");
+    Seller seller2 = new Seller(2, "Mehis", "5123123");
+    Seller seller3 = new Seller(3, "Giovanni", "5123123");
     List<Listing> listings = new ArrayList<>(Arrays.asList(
-            new Listing(1, vehicle1, seller1, true)
+            new Listing(1, vehicle1, seller1, true),
+            new Listing(2, vehicle2, seller2, true),
+            new Listing(3, vehicle3, seller3, true)
     ));
     @GetMapping("listings")
     public List<Listing> getListings() {
