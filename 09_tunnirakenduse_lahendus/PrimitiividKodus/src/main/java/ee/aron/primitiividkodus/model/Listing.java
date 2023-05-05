@@ -14,4 +14,7 @@ public class Listing {
     private Vehicle vehicle;
     private Seller seller;
     private boolean activity;
+
+    public void setActive(boolean activity) {
+    }
 }
