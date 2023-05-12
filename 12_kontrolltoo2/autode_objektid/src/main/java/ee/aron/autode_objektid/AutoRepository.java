@@ -8,5 +8,6 @@ public interface AutoRepository extends JpaRepository<Auto, Integer> {
     List<Auto> findAllByBrand (String brand);
     List<Auto> findAllByLengthBetween (int length1, int length2);
     List<Auto> findAllByMassBetween (int mass1, int mass2);
+    List<Auto> findAllByOwner (String name);
 
 }

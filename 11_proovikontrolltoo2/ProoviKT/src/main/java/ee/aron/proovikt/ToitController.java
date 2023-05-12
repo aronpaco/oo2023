@@ -1,4 +1,4 @@
-package ee.aron.proovikt;
+package main.java.ee.aron.proovikt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
