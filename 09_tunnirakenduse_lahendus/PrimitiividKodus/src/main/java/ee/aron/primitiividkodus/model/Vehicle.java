@@ -9,12 +9,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Listing {
+public class Vehicle {
     private int id;
-    private Vehicle vehicle;
-    private Seller seller;
-    private boolean activity;
-
-    public void setActive(boolean activity) {
-    }
+    private String brand;
+    private String model;
+    private int price;
 }

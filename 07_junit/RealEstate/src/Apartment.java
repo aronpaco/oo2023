@@ -6,8 +6,6 @@ public class Apartment extends RealEstate implements Calculations {
         super(squareMeters, yearBuilt, location);
     }
 
-
-
     @Override
     public double getPricePerSquareMeter() {
         double pricePerSquareMeter = 1000;
